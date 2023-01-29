@@ -1,0 +1,16 @@
+.list-info{
+    width: 600px;
+    height: 60px;
+    background-color: bisque;
+    display: flex;
+    border-radius: 10px;
+    margin-left: 458px;
+    margin-top: 10px;
+}
+.name-age{
+    display: flex;
+    margin-left: 20px;
+}
+.title{
+    margin-right: 10px;
+}

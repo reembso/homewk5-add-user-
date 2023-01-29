@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import Container from "./components/container/Container";
+import List from "./components/list/List";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+ function App() {
+  const [userInfo, setListAgeName] = useState([])
+  const saveAgeName=(data) => {
+    const nameAgeData=[...userInfo];
+    nameAgeData.push(data);
+    setListAgeName(nameAgeData);
+   
+  }
+  userInfo.sort(function(a,b){
+    return b.age - a.age;
+  })
+
+  return <div className="App">
+    <Container saveAgeNameHandler={saveAgeName}/>
+    <List userInfo={userInfo}/>
+  </div>;
 }
-
-export default App;
+export default App
